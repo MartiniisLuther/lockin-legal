@@ -52,21 +52,21 @@
   <body>
     <main>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: 16 October 2026</p>
+      <p class="updated">Last updated: 22 October 2026</p>
 
       <p>LockIn ("the app") is operated by <i>Martin Lutaaya</i>, Berlin, Germany ("we", "us").<br>
-        Contact: <strong>lutaayamart10gmail.com</strong></p>
+        Contact: <strong>lutaayamart10@gmail.com</strong></p>
 
       <p>
         LockIn can be used fully offline. Focus data and settings remain on your device unless you enable <strong>Cloud Sync</strong> 
-        or use features that require cloud processing, such as <strong>Buddies</strong>. If you link a <strong>Google account</strong>, 
-        Google authentication information is also processed as described below.
+        or use features that require cloud processing, such as <strong>Buddies</strong>. If you sign in with <strong>Apple</strong> 
+        or <strong>Google</strong>, authentication information from that provider is also processed as described below.
       </p>
 
       <h2>What We Store</h2>
       <p>
         <strong>On your phone only, while using LockIn offline:</strong> your focus sessions, streaks, credits, achievements, 
-        themes and in-app settings.</p>
+        themes, personal session tags and in-app settings.</p>
       <p><strong>In the cloud, only when you enable Cloud Sync or use Buddies:</strong></p>
 
       <div class="table-wrap">
@@ -78,16 +78,18 @@
             <tr>
               <td>A random account ID and your LockIn ID (e.g. LK-0000-0A0A)</td><td>To identify your account.</td></tr>
             <tr>
-              <td>Focus statistics, including totals, streaks, daily minutes, completed and failed sessions, achievements 
-                and owned themes</td><td>To sync and back up your progress across your devices.</td>
+              <td>Focus statistics, including totals, streaks, daily minutes, completed and failed sessions, sessions completed 
+                with buddies and in groups, achievements and owned themes</td><td>To sync and back up your progress across your devices.</td>
             </tr>
             <tr>
-              <td>Your newest 100 sessions, including start time, end time, length and result</td>
-              <td>To provide session history across your devices.</td>
+              <td>Your newest 100 sessions, including start time, end time, length, result, session type (solo, buddy or group), 
+                the private nickname of the buddy you focused with, the group size, and any tag you add (e.g. "Studying biology")</td>
+              <td>To provide session history across your devices. Tags and nicknames are private to your account.</td>
             </tr>
             <tr>
-              <td>Your Google account identifier and email address - only if you link Google</td>
-              <td>To connect your Google sign-in with your LockIn account and allow you to sign in again.</td>
+              <td>Your Apple or Google account identifier and the email address the provider shares - only if you sign in with 
+                Apple or Google. With Apple's "Hide My Email", we only receive a private relay address.</td>
+              <td>To connect your sign-in with your LockIn account and allow you to sign in again on other devices.</td>
             </tr>
             <tr>
               <td>Buddy connections and the nicknames you assign to buddies.</td>
@@ -102,12 +104,18 @@
                 (see <a href="#retention">Retention</a>)</td>
             </tr>
             <tr>
-              <td>A random ID for each installation</td><td>To help prevent the same account from running one shared session
-                on multiple devices simultaneously.</td>
+              <td>A random ID for each installation (created by the app, not a hardware identifier) and that installation's 
+                contribution to your totals</td><td>So progress from several devices adds up correctly, and to prevent the same 
+                account from running a shared session on multiple devices simultaneously.</td>
             </tr>
           </tbody>
         </table>
       </div>
+
+      <p>
+        If you contact us through "Report a problem" or "Send feedback", we receive your email address, your message and the 
+        details pre-filled in it (app version, iOS version and your LockIn ID). We use them only to answer you and fix problems.
+      </p>
 
       <p>
         We do not intentionally collect your contacts, precise location or advertising identifiers for LockIn. LockIn does 
@@ -118,7 +126,12 @@
       <p>
         People you have accepted as buddies can see your LockIn ID and your current status, - ready, focusing or offline. Where a 
         leaderboard is available, accepted buddies can also see the focus minutes and session counts shown for the relevant 
-        week or month. Your private buddy nicknames are not shown to the other person.
+        week or month. Your private buddy nicknames and session tags are never shown to anyone else.
+      </p>
+      <p>
+        During a shared session, the people in it can see that the session is running, whether you have stepped away from 
+        the app, and whether you left early. Group members see the group code, the number of people focusing and the host's 
+        LockIn ID (or the nickname they gave the host) — not the identities of other members.
       </p>
 
       <h2>Service Providers</h2>
@@ -133,8 +146,10 @@
           processes information according to Google’s own privacy policy. LockIn receives the information necessary to associate 
           your Google sign-in with your LockIn account.
         </li>
-        <li><strong>Apple</strong> - LockIn is distributed through the Apple App Store. Apple processes information associated 
-          with App Store use under Apple’s own terms and privacy policy.
+        <li><strong>Apple</strong> - if you choose “Sign in with Apple”, Apple provides the authentication service under its own 
+          privacy policy; LockIn requests only your email address (or a private relay address), not your name. LockIn is also 
+          distributed through the Apple App Store, where Apple processes information associated with App Store use under 
+          Apple’s own terms and privacy policy.
         </li>
       </ul>
 
@@ -162,6 +177,7 @@
       <ul>
         <li>Shared sessions and group lobbies are deleted about 15 minutes after they end.</li>
         <li>Pings are deleted after 1 day.</li>
+        <li>Emails you send us are kept only as long as needed to handle your request.</li>
         <li>Cloud session history is limited to your newest 100 sessions.</li>
         <li>Other cloud account and progress data is retained until you delete it or the account is otherwise terminated.</li>
         <li>After account deletion, data is removed from our active systems. Some information may remain temporarily in 
@@ -187,14 +203,18 @@
       </h4>
       <ul>
         <li><strong>Export</strong>: Profile → Export Focus Data (JSON or CSV).</li>
-        <li><strong>Turn off Sync</strong>: Profile → Cloud Sync → Turn off sync. Session updates stay local, cloud data is not
-          updated while sync is off.
+        <li><strong>Turn off Sync</strong>: Profile → Cloud Sync → Turn off sync. Session updates stay local and cloud data is 
+          not updated while sync is off. Your account and Buddies keep working.
         </li>
-        <li><strong>Delete Focus Data</strong>: Profile → Danger Zone → Delete Focus Data (hold button for 5s). Erases all data 
-          on your account, streaks, credits, sessions, achievements and in-app settings. Both local and cloud data is deleted.
+        <li><strong>Disconnect this phone</strong>: Profile → Cloud Sync → Disconnect this phone (accounts linked to Apple or 
+          Google). This phone leaves your account and stops syncing; its data stays on the phone.
         </li>
-        <li><strong>Delete Account</strong>: Profile → Danger Zone → Delete Account (hold button for 5s). Erases account data 
-          including the account itself.
+        <li><strong>Erase Focus Data</strong>: Profile → Danger Zone (hold for 5 seconds). Erases your streaks, credits, sessions, 
+          achievements and in-app settings on this phone and in the cloud. Your account itself remains.
+        </li>
+        <li><strong>Delete Account</strong>: Profile → Danger Zone → Delete account (confirm by typing DELETE). Permanently 
+          deletes your account and all its cloud data — progress, session history, buddy connections, shared sessions and 
+          groups you host — on every device, and resets this phone.
         </li>
       </ul>
       <p>
