@@ -1,80 +1,368 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LockIn — Legal</title>
-        <meta name="description" content="Privacy Policy and Terms of Service for the LockIn focus timer app.">
-        <style>
-            :root {
-                --bg: #ffffff;
-                --text: #1c1c1e;
-                --muted: #6e6e73;
-                --border: #e5e5ea;
-                --link: #0a63d1;
-                --surface: #f5f5f7;
-            }
-            @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #000000;
-                --text: #f2f2f7;
-                --muted: #98989f;
-                --border: #2c2c2e;
-                --link: #4da3ff;
-                --surface: #1c1c1e;
-            }
-            }
-            * { box-sizing: border-box; }
-            body {
-                margin: 0;
-                background: var(--bg);
-                color: var(--text);
-                font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-                -webkit-text-size-adjust: 100%;
-            }
-            main { max-width: 680px; margin: 0 auto; padding: 40px 20px 64px; }
-            h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
-            p { margin: 0 0 12px; }
-            .lead { color: var(--muted); margin-bottom: 32px; }
-            a { color: var(--link); }
-            .cards { display: grid; gap: 12px; margin-bottom: 32px; }
-            .card {
-            display: block;
-            padding: 16px 18px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            color: var(--text);
-            text-decoration: none;
-            }
-            .card strong { display: block; font-size: 1.05rem; }
-            .card span { color: var(--muted); font-size: 0.925rem; }
-            .card:hover strong, .card:focus-visible strong { color: var(--link); }
-            footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.875rem; }
-        </style>
-    </head>
-    <body>
-        <main>
-            <h1>LockIn</h1>
-            <p class="lead">A focus timer for solo and shared sessions. Works fully offline. Nothing leaves your phone unless you turn on Cloud Sync or Buddies.</p>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FocusLink — Focus solo or with friends</title>
+  <meta name="description" content="FocusLink is a focus timer that only rewards finished sessions. Focus on your own, or link up with friends in 1:1 and group sessions. No ads, no tracking.">
+  <meta name="theme-color" content="#11140D">
+  <meta property="og:title" content="FocusLink — Focus solo or with friends">
+  <meta property="og:description" content="A focus timer that only rewards finished sessions. Solo, 1:1 and group focus. No ads, no tracking.">
+  <meta property="og:image" content="/images/homepage.webp">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Lime — FocusLink's default theme */
+    :root {
+      --bg: #11140D;
+      --void: #0A0C08;
+      --surface: #1F2418;
+      --surface-low: #1A1F14;
+      --surface-high: #2A301F;
+      --border: #39402E;
+      --primary: #C3F400;
+      --primary-dim: #ABD600;
+      --on-primary: #141A00;
+      --text: #EEEEF0;
+      --text-2: #A3A3AE;
+      --muted: #6E6E79;
+      --danger: #FF3B30;
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; height: auto; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    h1, h2, h3, .wordmark { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 700; letter-spacing: -0.02em; }
 
-            <div class="cards">
-                <a class="card" href="/privacy">
-                    <strong>Privacy Policy</strong>
-                    <span>What we store, who can see it, and how to export or delete it.</span>
-                </a>
-                <a class="card" href="/terms">
-                    <strong>Terms of Service</strong>
-                    <span>The rules for using LockIn, its in-app items and Buddies.</span>
-                </a>
-            </div>
+    /* ── Nav ───────────────────────────────────────── */
+    nav { position: sticky; top: 0; z-index: 10; background: rgba(17,20,13,0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(57,64,46,0.6); }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .wordmark { font-size: 1.45rem; color: var(--text); letter-spacing: -0.04em; }
+    .wordmark b { color: var(--primary); font-weight: 700; }
+    nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; font-size: 0.925rem; }
+    nav ul a { color: var(--text-2); }
+    nav ul a:hover { color: var(--text); text-decoration: none; }
+    @media (max-width: 640px) { nav ul { display: none; } }
 
-            <p><strong>Contact</strong><br>
-            Questions, data requests or support: <a href="mailto:[CONTACT_EMAIL]">[CONTACT_EMAIL]</a></p>
+    /* ── Hero ──────────────────────────────────────── */
+    .hero { position: relative; overflow: hidden; padding: 72px 0 40px; }
+    .hero::before { content: ""; position: absolute; inset: -20% -10% auto auto; width: 70vw; height: 70vw; max-width: 900px; max-height: 900px;
+      background: radial-gradient(closest-side, rgba(195,244,0,0.14), rgba(195,244,0,0) 70%); pointer-events: none; }
+    .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+    .eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-2); }
+    .eyebrow i { font-style: normal; color: var(--primary); padding: 0 6px; }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.02; margin: 14px 0 18px; }
+    .hero h1 .wordmark { display: block; font-size: 1em; }
+    .hero h1 small { display: block; font-size: 0.48em; line-height: 1.2; color: var(--text-2); font-weight: 500; letter-spacing: -0.01em; margin-top: 10px; }
+    .lead { font-size: 1.125rem; color: var(--text-2); max-width: 520px; margin: 0 0 28px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 16px; padding: 14px 22px; font-weight: 600; font-family: "Space Grotesk", Inter, sans-serif; font-size: 1.05rem; }
+    .btn-primary { background: var(--primary); color: var(--on-primary); box-shadow: 0 10px 30px rgba(195,244,0,0.18); }
+    .btn-primary:hover { text-decoration: none; background: #D2FF1A; }
+    .btn-ghost { border: 1px solid var(--border); color: var(--text); }
+    .btn-ghost:hover { text-decoration: none; border-color: var(--primary-dim); }
+    .btn svg { width: 20px; height: 20px; }
+    .soon { font-size: 0.85rem; color: var(--muted); margin-top: 14px; }
+    .hero-shot { justify-self: center; position: relative; }
+    @media (max-width: 860px) {
+      .hero { padding-top: 40px; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
+      .hero-shot { order: 2; }
+    }
 
-            <p>[Download on the App Store — link once live]</p>
+    /* ── Phone frame ───────────────────────────────── */
+    .phone { width: 300px; max-width: 76vw; border-radius: 44px; padding: 9px; background: #050604; border: 1px solid #2B3122;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.03) inset; }
+    .phone img { border-radius: 36px; aspect-ratio: 1206 / 2622; object-fit: cover; width: 100%; background: var(--void); }
+    .phone.sm { width: 240px; }
+    .tablet { border-radius: 30px; padding: 10px; background: #050604; border: 1px solid #2B3122; box-shadow: 0 40px 80px rgba(0,0,0,0.55); }
+    .tablet img { border-radius: 21px; width: 100%; background: var(--void); }
 
-            <footer>LockIn · made by [MARTIN LUTAAYA], [Berlin, Germany]</footer>
-        </main>
-    </body>
+    /* ── Sections ──────────────────────────────────── */
+    section { padding: 88px 0; }
+    .section-head { max-width: 640px; margin-bottom: 44px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.08; margin: 10px 0 14px; }
+    .section-head p { color: var(--text-2); font-size: 1.075rem; margin: 0; }
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary);
+      border: 1px solid rgba(195,244,0,0.35); background: rgba(195,244,0,0.07); border-radius: 999px; padding: 4px 12px; }
+    .alt { background: var(--void); border-top: 1px solid #1C2116; border-bottom: 1px solid #1C2116; }
+
+    /* Rule strip */
+    .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .rule { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+    .rule .mark { font-family: "Space Grotesk", sans-serif; font-size: 1.4rem; font-weight: 700; }
+    .rule .ok { color: var(--primary); }
+    .rule .no { color: var(--danger); }
+    .rule h3 { font-size: 1.15rem; margin: 8px 0 6px; }
+    .rule p { color: var(--text-2); margin: 0; font-size: 0.95rem; }
+    @media (max-width: 760px) { .rules { grid-template-columns: 1fr; } }
+
+    /* Modes: solo / 1:1 / group */
+    .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .mode { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .mode .phone { margin-bottom: 26px; }
+    .mode h3 { font-size: 1.35rem; margin: 10px 0 6px; }
+    .mode p { color: var(--text-2); margin: 0; max-width: 320px; font-size: 0.975rem; }
+    @media (max-width: 900px) {
+      .modes { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
+      .mode { scroll-snap-align: center; }
+    }
+
+    /* Feature split */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .split.flip > :first-child { order: 2; }
+    .list { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
+    .list li { display: flex; gap: 12px; color: var(--text); }
+    .list li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 9px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px rgba(195,244,0,0.12); }
+    .shots { display: flex; gap: 18px; justify-content: center; }
+    .shots .phone:nth-child(2) { margin-top: 48px; }
+    @media (max-width: 860px) {
+      .split { grid-template-columns: 1fr; gap: 36px; }
+      .split.flip > :first-child { order: 0; }
+      .shots .phone.sm { width: 44vw; }
+    }
+
+    /* Themes strip */
+    .swatches { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .sw { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px 5px 6px; font-size: 0.85rem; color: var(--text-2); }
+    .sw i { width: 16px; height: 16px; border-radius: 50%; display: inline-block; }
+
+    /* iPad */
+    .ipad-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 22px; align-items: end; }
+    .ipad-grid .caption { color: var(--muted); font-size: 0.875rem; margin-top: 10px; text-align: center; }
+    @media (max-width: 860px) { .ipad-grid { grid-template-columns: 1fr; } }
+
+    /* Privacy cards */
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .card h3 { font-size: 1.05rem; margin: 0 0 6px; }
+    .card p { color: var(--text-2); font-size: 0.925rem; margin: 0; }
+    @media (max-width: 900px) { .cards { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .cards { grid-template-columns: 1fr; } }
+
+    /* Final CTA + footer */
+    .final { text-align: center; padding: 96px 0; }
+    .final h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 12px; }
+    .final p { color: var(--text-2); margin: 0 auto 28px; max-width: 520px; }
+    .final .cta-row { justify-content: center; }
+    footer { border-top: 1px solid #1C2116; padding: 36px 0 48px; color: var(--muted); font-size: 0.9rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+    footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
+    footer a { color: var(--text-2); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a href="/" class="wordmark" aria-label="FocusLink home"><b>F</b>ocus<b>L</b>ink</a>
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#together">Together</a></li>
+        <li><a href="#vault">Rewards</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Focus<i>·</i>Connect<i>·</i>Earn rewards</div>
+        <h1>
+          <span class="wordmark"><b style="color:var(--primary)">F</b>ocus<b style="color:var(--primary)">L</b>ink</span>
+          <small>Focus solo or with friends.</small>
+        </h1>
+        <p class="lead">A focus timer that only rewards finished sessions. Start, stay in the app, finish — and watch your streak grow. Or link up with a friend and keep each other honest.</p>
+        <div class="cta-row">
+          <!-- Swap href for the App Store link once live -->
+          <a class="btn btn-primary" href="#" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c.03 2.86 2.5 3.81 2.53 3.82-.02.07-.39 1.36-1.3 2.7-.79 1.15-1.6 2.3-2.88 2.32-1.26.02-1.67-.75-3.11-.75-1.45 0-1.9.73-3.09.77-1.24.05-2.18-1.25-2.98-2.4-1.62-2.35-2.86-6.63-1.2-9.53.83-1.44 2.3-2.35 3.9-2.37 1.22-.02 2.37.82 3.11.82.74 0 2.14-1.02 3.6-.87.62.03 2.34.25 3.45 1.88-.09.06-2.06 1.2-2.03 3.6M14.03 3.7c.66-.8 1.1-1.9.98-3-.95.04-2.1.63-2.78 1.43-.61.7-1.15 1.83-1 2.91 1.06.08 2.14-.54 2.8-1.34"/></svg>
+            Coming soon to the App Store
+          </a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+        <p class="soon">iPhone &amp; iPad · Free · No ads, no tracking</p>
+      </div>
+      <div class="hero-shot">
+        <div class="phone"><img src="/public/images/homepage.webp" width="640" height="1391" alt="FocusLink home screen: a 56-session streak, duration presets and the Start Session button" fetchpriority="high"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── The rule ── -->
+  <section id="how" style="padding-top:48px">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">How it works</span>
+        <h2>One simple rule makes it work.</h2>
+        <p>Every session is a small commitment. FocusLink adds just enough friction to help you keep it.</p>
+      </div>
+      <div class="rules">
+        <div class="rule"><div class="mark ok">✓</div><h3>Lock your screen</h3><p>Totally fine. The timer keeps going on your Lock Screen and in the Dynamic Island.</p></div>
+        <div class="rule"><div class="mark no">✕</div><h3>Leave the app</h3><p>A short countdown starts. Not back in time? The session fails and your streak resets.</p></div>
+        <div class="rule"><div class="mark ok">★</div><h3>Finish it</h3><p>Sessions of 15+ minutes grow your streak and earn Focus Points for the Vault.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Solo / 1:1 / Group ── -->
+  <section id="together" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Solo or together</span>
+        <h2>Three ways to focus.</h2>
+        <p>Go it alone, link up with one buddy, or open a room for a group. Every theme you unlock comes with you.</p>
+      </div>
+      <div class="modes">
+        <div class="mode">
+          <div class="phone"><img src="/public/images/solo-session.webp" width="640" height="1391" loading="lazy" alt="A solo focus session at 09:53 on the Prehistoric theme"></div>
+          <span class="tag">Solo</span>
+          <h3>On your own</h3>
+          <p>Pick 15, 30, 60 minutes or any length up to five hours. Just you and the timer.</p>
+        </div>
+        <div class="mode">
+          <div class="phone"><img src="/public/images/with-buddy-session.webp" width="640" height="1391" loading="lazy" alt="A 1:1 shared session with a buddy at 14:30 on the Frostfall theme"></div>
+          <span class="tag">1:1</span>
+          <h3>With a buddy</h3>
+          <p>Invite a friend. You both get a short countdown and start together — if either of you leaves, it ends for both.</p>
+        </div>
+        <div class="mode">
+          <div class="phone"><img src="/public/images/create-group-session.webp" width="640" height="1391" loading="lazy" alt="Creating a group session and choosing a duration"></div>
+          <span class="tag">Group</span>
+          <h3>In a group</h3>
+          <p>Share a code. It starts when two or more are in. Leaving only ends your own session.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Buddies ── -->
+  <section>
+    <div class="wrap split">
+      <div>
+        <span class="tag">Buddies</span>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>A small circle, not a social network.</h2>
+          <p>Add people with their FocusLink ID — no contacts, no feed, no followers.</p>
+        </div>
+        <ul class="list">
+          <li>See who's ready, focusing or offline</li>
+          <li>Send a ping when you're ready to focus</li>
+          <li>Weekly and monthly leaderboard with your buddies</li>
+          <li>Private nicknames, and hide anyone at any time</li>
+        </ul>
+      </div>
+      <div class="shots">
+        <div class="phone"><img src="/public/images/buddies-screen.webp" width="640" height="1325" loading="lazy" alt="The Buddies tab showing who is ready, focusing and offline"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Vault ── -->
+  <section id="vault" class="alt">
+    <div class="wrap split flip">
+      <div>
+        <span class="tag">Rewards</span>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Earned, never bought.</h2>
+          <p>Focus Points come only from finished sessions. Spend them in the Vault.</p>
+        </div>
+        <ul class="list">
+          <li>Animated themes and timer rings</li>
+          <li>Streak Freeze and Streak Restore for the sessions that go wrong</li>
+          <li>Achievements from Stone to Platinum — never taken away once earned</li>
+        </ul>
+        <div class="swatches" aria-label="Themes">
+          <span class="sw"><i style="background:#C3F400"></i>Lime</span>
+          <span class="sw"><i style="background:#FF5B2E"></i>Inferno</span>
+          <span class="sw"><i style="background:#E8A838"></i>Prehistoric</span>
+          <span class="sw"><i style="background:#62FF00"></i>Nova</span>
+          <span class="sw"><i style="background:#FF2200"></i>Machine</span>
+          <span class="sw"><i style="background:#89C4E1"></i>Frostfall</span>
+          <span class="sw"><i style="background:#FFD23A"></i>Helios</span>
+          <span class="sw"><i style="background:#22D7FF"></i>Ion</span>
+          <span class="sw"><i style="background:#FF4FD8"></i>Magenta</span>
+          <span class="sw"><i style="background:#8FAE5B"></i>Olive</span>
+          <span class="sw">+ more</span>
+        </div>
+      </div>
+      <div class="shots">
+        <div class="phone sm"><img src="/public/images/vault-achievements.webp" width="640" height="1391" loading="lazy" alt="Vault achievements: focus-hour milestones"></div>
+        <div class="phone sm"><img src="/public/images/vault-recovery-items.webp" width="640" height="1391" loading="lazy" alt="Vault recovery items: Streak Restore and Streak Freeze on the Magenta theme"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── iPad ── -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">iPhone &amp; iPad</span>
+        <h2>Room to breathe on iPad.</h2>
+        <p>Portrait or landscape, with your history, heatmap and every theme. Your progress syncs between devices.</p>
+      </div>
+      <div class="ipad-grid">
+        <div>
+          <div class="tablet"><img src="/public/images/ipad-landscape-homescreen.webp" width="1800" height="1350" loading="lazy" alt="FocusLink on iPad in landscape"></div>
+        </div>
+        <div>
+          <div class="tablet"><img src="/public/images/ipad-historyscreen.webp" width="1400" height="1867" loading="lazy" alt="Session history and activity heatmap on iPad"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Privacy ── -->
+  <section id="privacy" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Private by design</span>
+        <h2>Your focus is yours.</h2>
+        <p>Nothing leaves your device unless you turn on Cloud Sync or Buddies.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><h3>Works offline</h3><p>No account needed. Everything stays on your phone.</p></div>
+        <div class="card"><h3>No ads, no tracking</h3><p>No analytics SDKs, no advertising IDs, no selling data.</p></div>
+        <div class="card"><h3>Optional sync</h3><p>Sign in with Apple or Google to keep progress across devices.</p></div>
+        <div class="card"><h3>Your data, your call</h3><p>Export to JSON or CSV, erase it, or delete your account in the app.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Final CTA ── -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Start the session.<br>Finish the work.</h2>
+      <p>FocusLink is free on iPhone and iPad. Optional tips unlock the Aurum supporter theme — progress is never for sale.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#" aria-disabled="true">Coming soon to the App Store</a>
+        <a class="btn btn-ghost" href="mailto:support@focuslink.app">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 FocusLink · Berlin, Germany</span>
+      <div class="links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="mailto:support@focuslink.app">support@focuslink.app</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
 </html>
