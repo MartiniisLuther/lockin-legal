@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>FocusLink — Focus solo or with friends</title>
-  <meta name="description" content="FocusLink is a focus timer that only rewards finished sessions. Focus on your own, or link up with friends in 1:1 and group sessions. No ads, no tracking.">
+  <title>FocusLink — Focus Solo or with Friends</title>
+  <meta name="description" content="FocusLink is a focus app built around one idea: finish what you start. Focus alone, work alongside friends, build your streak, and earn rewards for completed sessions.">
   <meta name="theme-color" content="#11140D">
-  <meta property="og:title" content="FocusLink — Focus solo or with friends">
-  <meta property="og:description" content="A focus timer that only rewards finished sessions. Solo, 1:1 and group focus. No ads, no tracking.">
+  <meta property="og:title" content="FocusLink — Focus Solo or with Friends">
+  <meta property="og:description" content="Focus alone or with friends. Complete your sessions, build your streak, and earn rewards. No ads, no tracking.">
   <meta property="og:image" content="/images/homepage.webp">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,7 +93,7 @@
     .section-head { max-width: 640px; margin-bottom: 44px; }
     .section-head h2 { font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.08; margin: 10px 0 14px; }
     .section-head p { color: var(--text-2); font-size: 1.075rem; margin: 0; }
-    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary);
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: capitalize; color: var(--primary);
       border: 1px solid rgba(195,244,0,0.35); background: rgba(195,244,0,0.07); border-radius: 999px; padding: 4px 12px; }
     .alt { background: var(--void); border-top: 1px solid #1C2116; border-bottom: 1px solid #1C2116; }
 
@@ -124,7 +124,7 @@
     .list { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
     .list li { display: flex; gap: 12px; color: var(--text); }
     .list li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 9px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px rgba(195,244,0,0.12); }
-    .shots { display: flex; gap: 18px; justify-content: center; }
+    .shots { display: flex; gap: 18px; justify-content: center; align-items: flex-start; }   /* no stretching: the offset phone used to make its neighbour taller */
     .shots .phone:nth-child(2) { margin-top: 48px; }
     @media (max-width: 860px) {
       .split { grid-template-columns: 1fr; gap: 36px; }
@@ -168,7 +168,7 @@
       <a href="/" class="wordmark" aria-label="FocusLink home"><b>F</b>ocus<b>L</b>ink</a>
       <ul>
         <li><a href="#how">How it works</a></li>
-        <li><a href="#together">Together</a></li>
+        <li><a href="#together">Focus Modes</a></li>
         <li><a href="#vault">Rewards</a></li>
         <li><a href="#privacy">Privacy</a></li>
       </ul>
@@ -182,9 +182,12 @@
         <div class="eyebrow">Focus<i>·</i>Connect<i>·</i>Earn rewards</div>
         <h1>
           <span class="wordmark"><b style="color:var(--primary)">F</b>ocus<b style="color:var(--primary)">L</b>ink</span>
-          <small>Focus solo or with friends.</small>
+          <small>Focus Solo or with Friends.</small>
         </h1>
-        <p class="lead">A focus timer that only rewards finished sessions. Start, stay in the app, finish — and watch your streak grow. Or link up with a friend and keep each other honest.</p>
+        <p class="lead">FocusLink turns focused time into something you actually follow through on. Start a session, stay focused,
+            finish the work - and build your streak. Work alone when you need discipline, or link up with friends when you need
+            accountability.
+        </p>
         <div class="cta-row">
           <!-- Swap href for the App Store link once live -->
           <a class="btn btn-primary" href="#" aria-disabled="true">
@@ -196,7 +199,7 @@
         <p class="soon">iPhone &amp; iPad · Free · No ads, no tracking</p>
       </div>
       <div class="hero-shot">
-        <div class="phone"><img src="/public/images/homepage.webp" width="640" height="1391" alt="FocusLink home screen: a 56-session streak, duration presets and the Start Session button" fetchpriority="high"></div>
+        <div class="phone"><img src="/images/homepage.webp" width="640" height="1391" alt="FocusLink home screen: a 56-session streak, duration presets and the Start Session button" fetchpriority="high"></div>
       </div>
     </div>
   </header>
@@ -205,14 +208,25 @@
   <section id="how" style="padding-top:48px">
     <div class="wrap">
       <div class="section-head">
-        <span class="tag">How it works</span>
-        <h2>One simple rule makes it work.</h2>
-        <p>Every session is a small commitment. FocusLink adds just enough friction to help you keep it.</p>
+        <span class="tag">How FocusLink works</span>
+        <h2>Start, Stay, Finish.</h2>
+        <p>FocusLink rewards only completed focus. 
+            Start a session, stay in it, and finish what you committed to.
+        </p>
       </div>
       <div class="rules">
-        <div class="rule"><div class="mark ok">✓</div><h3>Lock your screen</h3><p>Totally fine. The timer keeps going on your Lock Screen and in the Dynamic Island.</p></div>
-        <div class="rule"><div class="mark no">✕</div><h3>Leave the app</h3><p>A short countdown starts. Not back in time? The session fails and your streak resets.</p></div>
-        <div class="rule"><div class="mark ok">★</div><h3>Finish it</h3><p>Sessions of 15+ minutes grow your streak and earn Focus Points for the Vault.</p></div>
+        <div class="rule">
+            <div class="mark ok">✓</div><h3>Lock your screen</h3>
+            <p>Put your phone away if you want. Your session keeps running on the Lock Screen.</p>
+        </div>
+        <div class="rule">
+            <div class="mark no">✕</div><h3>Step away</h3>
+            <p>Leave FocusLink during an active session and a short countdown gives you time to come back. Don’t return in time? Your session fails.</p>
+        </div>
+        <div class="rule">
+            <div class="mark ok">★</div><h3>Finish it</h3>
+            <p>Complete 15+ minutes and you build your streak and earn Focus Points for the Vault.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -221,28 +235,29 @@
   <section id="together" class="alt">
     <div class="wrap">
       <div class="section-head">
-        <span class="tag">Solo or together</span>
-        <h2>Three ways to focus.</h2>
-        <p>Go it alone, link up with one buddy, or open a room for a group. Every theme you unlock comes with you.</p>
+        <span class="tag">Solo or Together</span>
+        <h2>Focus alone or with someone. Or in a room full of people.</h2>
+        <p>You don’t always need to focus alone. Sometimes you may need someone else to show up. FocusLink gives you three ways to focus: a private solo session, a 1:1 session with a buddy, or a group lobby where anyone with the code can join.</p>
       </div>
       <div class="modes">
         <div class="mode">
-          <div class="phone"><img src="/public/images/solo-session.webp" width="640" height="1391" loading="lazy" alt="A solo focus session at 09:53 on the Prehistoric theme"></div>
+          <div class="phone"><img src="/images/solo-session.webp" width="640" height="1391" loading="lazy" alt="A solo focus session at 09:53 on the Prehistoric theme"></div>
           <span class="tag">Solo</span>
-          <h3>On your own</h3>
-          <p>Pick 15, 30, 60 minutes or any length up to five hours. Just you and the timer.</p>
+          <h3>Your Time. Your Focus.</h3>
+          <p>Choose 15, 30, 60 minutes or any length, up to five hours. No one else needs to be online. Simply start, stay focused and finish.</p>
         </div>
         <div class="mode">
-          <div class="phone"><img src="/public/images/with-buddy-session.webp" width="640" height="1391" loading="lazy" alt="A 1:1 shared session with a buddy at 14:30 on the Frostfall theme"></div>
-          <span class="tag">1:1</span>
-          <h3>With a buddy</h3>
-          <p>Invite a friend. You both get a short countdown and start together — if either of you leaves, it ends for both.</p>
+            <div class="phone"><img src="/images/with-buddy-session.webp" width="640" height="1391" loading="lazy" alt="A 1:1 shared session with a buddy at 14:30 on the Frostfall theme"></div>
+            <span class="tag">1:1</span>
+            <h3>Send the signal. Start together.</h3>
+            <p>Ping a buddy or invite them to a 1:1 session whenever you want to focus together. Abandoning a 1:1 session by either participant fails for both.</p>
         </div>
         <div class="mode">
-          <div class="phone"><img src="/public/images/create-group-session.webp" width="640" height="1391" loading="lazy" alt="Creating a group session and choosing a duration"></div>
-          <span class="tag">Group</span>
-          <h3>In a group</h3>
-          <p>Share a code. It starts when two or more are in. Leaving only ends your own session.</p>
+            <div class="phone"><img src="/images/create-group-session.webp" width="640" height="1391" loading="lazy" alt="Creating a group session and choosing a duration"></div>
+            <span class="tag">Group</span>
+            <h3>Create a room. Share the code.</h3>
+            <p>Create a lobby, share the code for anyone to join — or enter a group someone else created. Sessions of 60+ minutes allow late joins in the first 20 minutes. Leave early, only your session fails.</p>
+            
         </div>
       </div>
     </div>
@@ -254,18 +269,21 @@
       <div>
         <span class="tag">Buddies</span>
         <div class="section-head" style="margin-bottom:0">
-          <h2>A small circle, not a social network.</h2>
-          <p>Add people with their FocusLink ID — no contacts, no feed, no followers.</p>
+            <h2>Your circle stays personal.</h2>
+            <p>Buddies are the people you can directly connect with for 1:1 focus sessions and compare your progress with. Group sessions are different: they can be open to anyone with the lobby code.</p>
         </div>
         <ul class="list">
-          <li>See who's ready, focusing or offline</li>
-          <li>Send a ping when you're ready to focus</li>
-          <li>Weekly and monthly leaderboard with your buddies</li>
-          <li>Private nicknames, and hide anyone at any time</li>
+            <li>See who's ready, focusing or offline</li>
+            <li>Send a ping when you're ready to focus together</li>
+            <li>Invite a buddy (if ready but not in a session) into a 1:1 session</li>
+            <li>Compare your progress on weekly and monthly leaderboards</li>
         </ul>
+        <p class="section-head">
+            Your FocusLink account can be signed in on multiple devices, but only one active session is allowed at a time.
+        </p>
       </div>
       <div class="shots">
-        <div class="phone"><img src="/public/images/buddies-screen.webp" width="640" height="1325" loading="lazy" alt="The Buddies tab showing who is ready, focusing and offline"></div>
+        <div class="phone"><img src="/images/buddies-screen.webp" width="640" height="1325" loading="lazy" alt="The Buddies tab showing who is ready, focusing and offline"></div>
       </div>
     </div>
   </section>
@@ -276,31 +294,31 @@
       <div>
         <span class="tag">Rewards</span>
         <div class="section-head" style="margin-bottom:0">
-          <h2>Earned, never bought.</h2>
-          <p>Focus Points come only from finished sessions. Spend them in the Vault.</p>
+          <h2>Your rewards come from doing the work.</h2>
+          <p>Focus Points are earned by completing sessions. Spend them in the Vault to customize your FocusLink.</p>
         </div>
         <ul class="list">
-          <li>Animated themes and timer rings</li>
-          <li>Streak Freeze and Streak Restore for the sessions that go wrong</li>
-          <li>Achievements from Stone to Platinum — never taken away once earned</li>
+            <li>Purchase themes and timer rings with your Focus Points</li>
+            <li>Protect your streak with a Freeze or recover it with a Restore</li>
+            <li>21 achievements to unlock and keep forever</li>
         </ul>
         <div class="swatches" aria-label="Themes">
-          <span class="sw"><i style="background:#C3F400"></i>Lime</span>
-          <span class="sw"><i style="background:#FF5B2E"></i>Inferno</span>
-          <span class="sw"><i style="background:#E8A838"></i>Prehistoric</span>
-          <span class="sw"><i style="background:#62FF00"></i>Nova</span>
-          <span class="sw"><i style="background:#FF2200"></i>Machine</span>
-          <span class="sw"><i style="background:#89C4E1"></i>Frostfall</span>
-          <span class="sw"><i style="background:#FFD23A"></i>Helios</span>
-          <span class="sw"><i style="background:#22D7FF"></i>Ion</span>
-          <span class="sw"><i style="background:#FF4FD8"></i>Magenta</span>
-          <span class="sw"><i style="background:#8FAE5B"></i>Olive</span>
-          <span class="sw">+ more</span>
+            <span class="sw"><i style="background:#C3F400"></i>Lime</span>
+            <span class="sw"><i style="background:#FF5B2E"></i>Inferno</span>
+            <span class="sw"><i style="background:#E8A838"></i>Prehistoric</span>
+            <span class="sw"><i style="background:#62FF00"></i>Nova</span>
+            <span class="sw"><i style="background:#FF2200"></i>Machine</span>
+            <span class="sw"><i style="background:#89C4E1"></i>Frostfall</span>
+            <span class="sw"><i style="background:#FFD23A"></i>Helios</span>
+            <span class="sw"><i style="background:#22D7FF"></i>Ion</span>
+            <span class="sw"><i style="background:#FF4FD8"></i>Magenta</span>
+            <span class="sw"><i style="background:#8FAE5B"></i>Olive</span>
+            <span class="sw">+ more</span>
         </div>
       </div>
       <div class="shots">
-        <div class="phone sm"><img src="/public/images/vault-achievements.webp" width="640" height="1391" loading="lazy" alt="Vault achievements: focus-hour milestones"></div>
-        <div class="phone sm"><img src="/public/images/vault-recovery-items.webp" width="640" height="1391" loading="lazy" alt="Vault recovery items: Streak Restore and Streak Freeze on the Magenta theme"></div>
+        <div class="phone sm"><img src="/images/vault-achievements.webp" width="640" height="1391" loading="lazy" alt="Vault achievements: focus-hour milestones"></div>
+        <div class="phone sm"><img src="/images/vault-recovery-items.webp" width="640" height="1391" loading="lazy" alt="Vault recovery items: Streak Restore and Streak Freeze on the Magenta theme"></div>
       </div>
     </div>
   </section>
@@ -310,15 +328,15 @@
     <div class="wrap">
       <div class="section-head">
         <span class="tag">iPhone &amp; iPad</span>
-        <h2>Room to breathe on iPad.</h2>
-        <p>Portrait or landscape, with your history, heatmap and every theme. Your progress syncs between devices.</p>
+        <h2>Your focus, wherever you work.</h2>
+        <p>FocusLink is built for both iPhone and iPad, in portrait or landscape. Keep your sessions, history, heatmap and unlocked rewards with you across devices.</p>
       </div>
       <div class="ipad-grid">
         <div>
-          <div class="tablet"><img src="/public/images/ipad-landscape-homescreen.webp" width="1800" height="1350" loading="lazy" alt="FocusLink on iPad in landscape"></div>
+          <div class="tablet"><img src="/images/ipad-landscape-homescreen.webp" width="1800" height="1350" loading="lazy" alt="FocusLink on iPad in landscape"></div>
         </div>
         <div>
-          <div class="tablet"><img src="/public/images/ipad-historyscreen.webp" width="1400" height="1867" loading="lazy" alt="Session history and activity heatmap on iPad"></div>
+          <div class="tablet"><img src="/images/ipad-historyscreen.webp" width="1400" height="1867" loading="lazy" alt="Session history and activity heatmap on iPad"></div>
         </div>
       </div>
     </div>
@@ -329,40 +347,55 @@
     <div class="wrap">
       <div class="section-head">
         <span class="tag">Private by design</span>
-        <h2>Your focus is yours.</h2>
-        <p>Nothing leaves your device unless you turn on Cloud Sync or Buddies.</p>
+        <h2>Focus should stay focused.</h2>
+        <p>FocusLink doesn’t need to know everything about you to help you work. Your data stays on your device unless you choose to use Cloud Sync or Buddies.</p>
       </div>
       <div class="cards">
-        <div class="card"><h3>Works offline</h3><p>No account needed. Everything stays on your phone.</p></div>
-        <div class="card"><h3>No ads, no tracking</h3><p>No analytics SDKs, no advertising IDs, no selling data.</p></div>
-        <div class="card"><h3>Optional sync</h3><p>Sign in with Apple or Google to keep progress across devices.</p></div>
-        <div class="card"><h3>Your data, your call</h3><p>Export to JSON or CSV, erase it, or delete your account in the app.</p></div>
+        <div class="card">
+            <h3>Works Offline</h3>
+            <p>No account required to start. Your session history can stay entirely on your device.</p>
+        </div>
+        <div class="card">
+            <h3>No ads, No tracking</h3>
+            <p>No advertising IDs, no analytics SDKs, and no selling your data.</p>
+        </div>
+        <div class="card">
+            <h3>Sync when you want</h3>
+            <p>Sign in with Apple or Google when you want your progress across devices.</p>
+        </div>
+        <div class="card">
+            <h3>You're in control of data</h3>
+            <p>Export your data, erase it, or delete your account directly from the app.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Final CTA ── -->
-  <section class="final">
-    <div class="wrap">
-      <h2>Start the session.<br>Finish the work.</h2>
-      <p>FocusLink is free on iPhone and iPad. Optional tips unlock the Aurum supporter theme — progress is never for sale.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#" aria-disabled="true">Coming soon to the App Store</a>
-        <a class="btn btn-ghost" href="mailto:support@focuslink.app">Contact us</a>
-      </div>
-    </div>
-  </section>
+    <!-- ── Final CTA ── -->
+    <section class="final">
+        <div class="wrap">
+            <h2>Start the session.<br>Finish the work.</h2>
+            <p>
+                FocusLink is free on iPhone and iPad. Focus, connect with your people, build your streak, and earn rewards for 
+                actually finishing. Optional tips unlock the Aurum supporter theme — your progress cannot be bought.
+            </p>
+            <div class="cta-row">
+                <a class="btn btn-primary" href="#" aria-disabled="true">Coming soon to the App Store</a>
+                <a class="btn btn-ghost" href="mailto:support@focuslink.app">Contact us</a>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <div class="wrap">
-      <span>© 2026 FocusLink · Berlin, Germany</span>
-      <div class="links">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms of Service</a>
-        <a href="mailto:support@focuslink.app">support@focuslink.app</a>
-      </div>
-    </div>
-  </footer>
+    <footer>
+        <div class="wrap">
+            <span>© 2026 FocusLink · Berlin, Germany</span>
+            <div class="links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="mailto:support@focuslink.app">support@focuslink.app</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
