@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>FocusLink — Terms of Service</title>
+    <link rel="alternate" hreflang="en" href="https://focuslink.app/terms">
+    <link rel="alternate" hreflang="de" href="https://focuslink.app/de/terms">
         <meta name="description" content="Terms of Service for the FocusLink focus app.">
         <style>
             :root {
@@ -39,11 +41,17 @@
             .updated { color: var(--muted); font-style: italic; margin-bottom: 24px; }
             a { color: var(--link); }
             footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.875rem; }
-        </style>
+        
+      /* EN / DE switch */
+      .lang-switch { float: right; display: inline-flex; margin-top: 10px; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; font-size: 0.8rem; font-weight: 600; }
+      .lang-switch a { padding: 4px 11px; color: var(--muted); text-decoration: none; }
+      .lang-switch a[aria-current] { background: var(--surface); color: var(--text); }
+    </style>
     </head>
     <body>
         <main>
-            <h1>Terms of Service</h1>
+            <div class="lang-switch" role="navigation" aria-label="Language / Sprache"><a href="/terms" hreflang="en" data-lang="en" aria-current="page">EN</a><a href="/de/terms" hreflang="de" lang="de" data-lang="de">DE</a></div>
+      <h1>Terms of Service</h1>
             <p class="updated">Last updated: 27 October 2026</p>
 
             <p>
@@ -144,5 +152,18 @@
 
             <footer>FocusLink · <a href="/privacy">Privacy Policy</a></footer>
         </main>
-    </body>
+    
+  <script>
+    (function () {
+      try {
+        if (!localStorage.getItem('fl-lang') && (navigator.languages || [navigator.language]).some(function (l) { return /^de\b/i.test(l); }))
+          location.replace('/de/terms' + location.hash);
+      } catch (e) {}
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('.lang-switch a');
+        if (a) try { localStorage.setItem('fl-lang', a.getAttribute('data-lang')); } catch (err) {}
+      });
+    })();
+  </script>
+  </body>
 </html>

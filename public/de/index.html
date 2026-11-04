@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FocusLink — Konzentriere dich allein oder mit Freunden</title>
+  <meta name="description" 
+    content="FocusLink ist eine Fokus-App für iPhone und iPad. Konzentriere dich allein oder mit Freunden, 
+      baue deine Streak auf und verdiene Belohnungen für jede abgeschlossene Sitzung. Kostenlos, ohne Werbung und Tracking."
+  >
+  <link rel="canonical" href="https://focuslink.app/de/">
+  <link rel="alternate" hreflang="en" href="https://focuslink.app/">
+  <link rel="alternate" hreflang="de" href="https://focuslink.app/de/">
+  <link rel="alternate" hreflang="x-default" href="https://focuslink.app/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#11140D">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Social previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FocusLink">
+  <meta property="og:url" content="https://focuslink.app/de/">
+  <meta property="og:title" content="FocusLink — Konzentriere dich allein oder mit Freunden">
+  <meta property="og:description" content="Konzentriere dich allein oder mit Freunden. Schließe deine Sitzungen ab, baue deine Streak auf und verdiene Belohnungen. Kostenlos für iPhone und iPad, ohne Werbung und Tracking.">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://focuslink.app/images/og-de.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FocusLink – Konzentriere dich allein oder mit Freunden. Daneben ist der Startbildschirm der App auf einem iPhone zu sehen.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FocusLink — Konzentriere dich allein oder mit Freunden">
+  <meta name="twitter:description" content="Konzentriere dich allein oder mit Freunden. Schließe deine Sitzungen ab, baue deine Streak auf und verdiene Belohnungen. Kostenlos für iPhone und iPad, ohne Werbung und Tracking.">
+  <meta name="twitter:image" content="https://focuslink.app/images/og-de.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/images/homepage.webp" type="image/webp" fetchpriority="high">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://focuslink.app/#org",
+        "name": "FocusLink",
+        "url": "https://focuslink.app/",
+        "logo": "https://focuslink.app/icon-192.png",
+        "email": "support@focuslink.app",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Berlin",
+          "addressCountry": "DE"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://focuslink.app/#website",
+        "url": "https://focuslink.app/",
+        "name": "FocusLink",
+        "inLanguage": [
+          "en",
+          "de"
+        ],
+        "publisher": {
+          "@id": "https://focuslink.app/#org"
+        }
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "FocusLink",
+        "operatingSystem": "iOS, iPadOS",
+        "applicationCategory": "ProductivityApplication",
+        "inLanguage": [
+          "en",
+          "de"
+        ],
+        "description": "FocusLink ist eine Fokus-App für iPhone und iPad. Konzentriere dich allein oder mit Freunden, baue deine Streak auf und verdiene Belohnungen für jede abgeschlossene Sitzung. Kostenlos, ohne Werbung und Tracking.",
+        "url": "https://focuslink.app/de/",
+        "image": "https://focuslink.app/images/og-de.jpg",
+        "screenshot": [
+          "https://focuslink.app/images/homepage.webp",
+          "https://focuslink.app/images/solo-session.webp",
+          "https://focuslink.app/images/ipad-landscape-homescreen.webp"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "publisher": {
+          "@id": "https://focuslink.app/#org"
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* Lime — FocusLinks Standard-Design */
+    :root {
+      --bg: #11140D;
+      --void: #0A0C08;
+      --surface: #1F2418;
+      --surface-low: #1A1F14;
+      --surface-high: #2A301F;
+      --border: #39402E;
+      --primary: #C3F400;
+      --primary-dim: #ABD600;
+      --on-primary: #141A00;
+      --text: #EEEEF0;
+      --text-2: #A3A3AE;
+      --muted: #8A8A95;
+      --danger: #FF3B30;
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; height: auto; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    h1, h2, h3, .wordmark { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+
+    /* ── Nav ───────────────────────────────────────── */
+    nav { position: sticky; top: 0; z-index: 10; background: rgba(17,20,13,0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(57,64,46,0.6); }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .wordmark { font-size: 1.45rem; color: var(--text); letter-spacing: -0.04em; }
+    .wordmark b { color: var(--primary); font-weight: 700; }
+    nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; font-size: 0.925rem; }
+    nav ul a { color: var(--text-2); }
+    nav ul a:hover { color: var(--text); text-decoration: none; }
+    @media (max-width: 640px) { nav ul { display: none; } }
+
+    /* ── Hero ──────────────────────────────────────── */
+    .hero { position: relative; overflow: hidden; padding: 72px 0 40px; }
+    .hero::before { content: ""; position: absolute; inset: -20% -10% auto auto; width: 70vw; height: 70vw; max-width: 900px; max-height: 900px;
+      background: radial-gradient(closest-side, rgba(195,244,0,0.14), rgba(195,244,0,0) 70%); pointer-events: none; }
+    .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+    .eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-2); }
+    .eyebrow i { font-style: normal; color: var(--primary); padding: 0 6px; }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.02; margin: 14px 0 18px; }
+    .hero h1 .wordmark { display: block; font-size: 1em; }
+    .hero h1 small { display: block; font-size: 0.48em; line-height: 1.2; color: var(--text-2); font-weight: 500; letter-spacing: -0.01em; margin-top: 10px; }
+    .lead { font-size: 1.125rem; color: var(--text-2); max-width: 520px; margin: 0 0 28px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 16px; padding: 14px 22px; font-weight: 600; font-family: "Space Grotesk", Inter, sans-serif; font-size: 1.05rem; }
+    .btn-primary { background: var(--primary); color: var(--on-primary); box-shadow: 0 10px 30px rgba(195,244,0,0.18); }
+    .btn-primary:hover { text-decoration: none; background: #D2FF1A; }
+    .btn-ghost { border: 1px solid var(--border); color: var(--text); }
+    .btn-ghost:hover { text-decoration: none; border-color: var(--primary-dim); }
+    .btn svg { width: 20px; height: 20px; }
+    .soon { font-size: 0.85rem; color: var(--muted); margin-top: 14px; }
+    .hero-shot { justify-self: center; position: relative; }
+    @media (max-width: 860px) {
+      .hero { padding-top: 40px; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
+      .hero-shot { order: 2; }
+    }
+
+    /* ── Phone frame ───────────────────────────────── */
+    .phone { width: 300px; max-width: 76vw; border-radius: 44px; padding: 9px; background: #050604; border: 1px solid #2B3122;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.03) inset; }
+    .phone img { border-radius: 36px; width: 100%; height: auto; background: var(--void); }
+    .phone.sm { width: 240px; }
+    .tablet { border-radius: 30px; padding: 10px; background: #050604; border: 1px solid #2B3122; box-shadow: 0 40px 80px rgba(0,0,0,0.55); }
+    .tablet img { border-radius: 21px; width: 100%; background: var(--void); }
+
+    /* ── Sections ──────────────────────────────────── */
+    section { padding: 88px 0; }
+    .section-head { max-width: 640px; margin-bottom: 44px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.08; margin: 10px 0 14px; }
+    .section-head p { color: var(--text-2); font-size: 1.075rem; margin: 0; }
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: none; color: var(--primary);
+      border: 1px solid rgba(195,244,0,0.35); background: rgba(195,244,0,0.07); border-radius: 999px; padding: 4px 12px; }
+    .alt { background: var(--void); border-top: 1px solid #1C2116; border-bottom: 1px solid #1C2116; }
+
+
+    /* Use cases */
+    .uses { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+    .use { grid-column: span 2; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 22px 22px;
+      display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+    .use:nth-child(4), .use:nth-child(5) { grid-column: span 3; }
+    .use:hover { border-color: rgba(195,244,0,0.45); transform: translateY(-2px); }
+    .use .label { margin: 0; font-family: Inter, sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); display: flex; align-items: center; gap: 8px; }
+    .use .label::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px rgba(195,244,0,0.12); }
+    .use blockquote { margin: 0; font-family: "Space Grotesk", Inter, sans-serif; font-weight: 500; font-size: 1.25rem; line-height: 1.3; color: var(--text); letter-spacing: -0.01em; }
+    .use p { margin: 0; color: var(--text-2); font-size: 0.95rem; }
+    @media (max-width: 900px) { .uses { grid-template-columns: 1fr 1fr; } .use, .use:nth-child(4), .use:nth-child(5) { grid-column: span 1; } .use:nth-child(5) { grid-column: span 2; } }
+    @media (max-width: 600px) { .uses { grid-template-columns: 1fr; } .use, .use:nth-child(4), .use:nth-child(5) { grid-column: span 1; } }
+
+    /* Rule strip */
+    .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .rule { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+    .rule .mark { font-family: "Space Grotesk", sans-serif; font-size: 1.4rem; font-weight: 700; }
+    .rule .ok { color: var(--primary); }
+    .rule .no { color: var(--danger); }
+    .rule h3 { font-size: 1.15rem; margin: 8px 0 6px; }
+    .rule p { color: var(--text-2); margin: 0; font-size: 0.95rem; }
+    @media (max-width: 760px) { .rules { grid-template-columns: 1fr; } }
+
+    /* Modes: solo / 1:1 / group */
+    .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .mode { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .mode .phone { margin-bottom: 26px; }
+    .mode h3 { font-size: 1.35rem; margin: 10px 0 6px; }
+    .mode p { color: var(--text-2); margin: 0; max-width: 320px; font-size: 0.975rem; }
+    @media (max-width: 900px) {
+      .modes { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
+      .mode { scroll-snap-align: center; }
+    }
+
+    /* Feature split */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .split.flip > :first-child { order: 2; }
+    .list { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
+    .list li { display: flex; gap: 12px; color: var(--text); }
+    .list li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 9px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px rgba(195,244,0,0.12); }
+    .shots { display: flex; gap: 18px; justify-content: center; align-items: flex-start; }   /* no stretching: the offset phone used to make its neighbour taller */
+    .shots .phone:nth-child(2) { margin-top: 48px; }
+    @media (max-width: 860px) {
+      .split { grid-template-columns: 1fr; gap: 36px; }
+      .split.flip > :first-child { order: 0; }
+      .shots .phone.sm { width: 44vw; }
+    }
+
+    /* Themes strip */
+    .swatches { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .sw { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px 5px 6px; font-size: 0.85rem; color: var(--text-2); }
+    .sw i { width: 16px; height: 16px; border-radius: 50%; display: inline-block; }
+
+    /* iPad */
+    .ipad-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 22px; align-items: end; }
+    .ipad-grid .caption { color: var(--muted); font-size: 0.875rem; margin-top: 10px; text-align: center; }
+    @media (max-width: 860px) { .ipad-grid { grid-template-columns: 1fr; } }
+
+    /* Privacy cards */
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .card h3 { font-size: 1.05rem; margin: 0 0 6px; }
+    .card p { color: var(--text-2); font-size: 0.925rem; margin: 0; }
+    @media (max-width: 900px) { .cards { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .cards { grid-template-columns: 1fr; } }
+
+    /* Final CTA + footer */
+    .final { text-align: center; padding: 96px 0; }
+    .final h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 12px; }
+    .final p { color: var(--text-2); margin: 0 auto 28px; max-width: 520px; }
+    .final .cta-row { justify-content: center; }
+    footer { border-top: 1px solid #1C2116; padding: 36px 0 48px; color: var(--muted); font-size: 0.9rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+    footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
+    footer a { color: var(--text-2); }
+
+    /* EN / DE switch */
+    .nav-right { display: flex; align-items: center; gap: 22px; }
+    .lang-switch { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; }
+    .lang-switch a { padding: 4px 10px; color: var(--text-2); }
+    .lang-switch a:hover { text-decoration: none; color: var(--text); }
+    .lang-switch a[aria-current] { background: var(--primary); color: var(--on-primary); }
+    /* ── Accessibility ─────────────────────────────── */
+    .skip { position: absolute; left: 12px; top: -60px; z-index: 50; background: var(--primary); color: var(--on-primary);
+      font-weight: 600; padding: 10px 16px; border-radius: 12px; transition: top .15s; }
+    .skip:focus { top: 12px; text-decoration: none; }
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+    .btn:focus-visible { border-radius: 16px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    [id] { scroll-margin-top: 76px; }
+    .btn[aria-disabled="true"] { cursor: default; }
+    .lead:has(+ .lead) { margin-bottom: 14px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+      .use:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+  <nav aria-label="Hauptnavigation">
+    <div class="wrap">
+      <a href="/de/" class="wordmark" aria-label="FocusLink – Startseite"><b>F</b>ocus<b>L</b>ink</a>
+      <div class="nav-right">
+      <ul>
+        <li><a href="#for-you">Warum FocusLink</a></li>
+        <li><a href="#together">Fokus-Modi</a></li>
+        <li><a href="#how">So funktioniert’s</a></li>
+        <li><a href="#vault">Belohnungen</a></li>
+        <li><a href="#privacy">Datenschutz</a></li>
+      </ul>
+      <div class="lang-switch" role="group" aria-label="Sprache"><a href="/" hreflang="en" data-lang="en" lang="en" aria-label="English">EN</a><a href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch" aria-current="page">DE</a></div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Fokussieren<i aria-hidden="true">·</i>Verbinden<i aria-hidden="true">·</i>Belohnungen verdienen</div>
+        <h1>
+          <span class="wordmark"><b>F</b>ocus<b>L</b>ink</span>
+          <small>Konzentriere dich allein oder mit Freunden.</small>
+        </h1>
+        <p class="lead">
+          FocusLink macht aus konzentrierter Zeit echte Fortschritte. Starte eine Sitzung, bleib fokussiert, bring zu 
+          Ende, was du angefangen hast – und baue deine Streak auf. Arbeite allein, wenn du Disziplin brauchst, oder 
+          verbinde dich mit Freunden, wenn du Verbindlichkeit brauchst.
+        </p>
+        <div class="cta-row">
+          <!-- When live: add href="https://apps.apple.com/app/idXXXXXXXXXX" and remove aria-disabled -->
+          <a class="btn btn-primary" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path 
+                d="M16.37 12.6c.03 2.86 2.5 3.81 2.53 3.82-.02.07-.39 
+                  1.36-1.3 2.7-.79 1.15-1.6 2.3-2.88 2.32-1.26.02-1.67-.75-3.11-.75-1.45 
+                  0-1.9.73-3.09.77-1.24.05-2.18-1.25-2.98-2.4-1.62-2.35-2.86-6.63-1.2-9.53.83-1.44 
+                  2.3-2.35 3.9-2.37 1.22-.02 2.37.82 3.11.82.74 0 2.14-1.02 3.6-.87.62.03 2.34.25 
+                  3.45 1.88-.09.06-2.06 1.2-2.03 3.6M14.03 3.7c.66-.8 1.1-1.9.98-3-.95.04-2.1.63-2.78 
+                  1.43-.61.7-1.15 1.83-1 2.91 1.06.08 2.14-.54 2.8-1.34"
+              />
+            </svg>
+            Demnächst im App Store
+          </a>
+          <a class="btn btn-ghost" href="#how">So funktioniert’s</a>
+        </div>
+        <p class="soon">iPhone &amp; iPad · Kostenlos · Keine Werbung, kein Tracking</p>
+      </div>
+      <div class="hero-shot">
+        <div class="phone">
+          <img src="/images/homepage.webp" width="640" height="1391"
+            alt="FocusLink-Startbildschirm auf dem iPhone: eine aktuelle Streak von 56 Sitzungen, Buttons für 15, 30 und 60 Minuten oder eine eigene Dauer, 30 ist ausgewählt, ein großer Start-Session-Button, die Option „Focus with others“ und Statistiken mit 59 fokussierten Stunden und 52 Minuten im Schnitt"
+            fetchpriority="high" decoding="async">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Use cases: why FocusLink ── -->
+  <section id="for-you" style="padding-top:56px">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Für genau solche Momente</span>
+        <h2>Was du schon lange erledigen wolltest – fang jetzt an.</h2>
+        <p>FocusLink hilft dir, aus guten Vorsätzen echte Fortschritte zu machen. Arbeite allein, hol dir Unterstützung
+          von einem Freund oder schließe dich einer Gruppe an. Jede abgeschlossene Sitzung stärkt deine Routine, 
+          verlängert deine Streak und bringt dich deinen Zielen näher.
+        </p>
+      </div>
+      <div class="uses">
+        <article class="use">
+          <h3 class="label">Lernen</h3>
+          <blockquote>„Ich muss lernen, aber ständig schaue ich aufs Handy.“</blockquote>
+          <p>
+            Starte eine Fokussitzung, leg Ablenkungen beiseite und nimm dir bewusst Zeit zum Lernen. Beginne mit 15, 
+            30 oder 60 Minuten – oder fordere dich selbst heraus und bleib noch länger dran. Bring zu Ende, was du angefangen hast.
+          </p>
+        </article>
+        <article class="use">
+          <h3 class="label">Konzentriertes Arbeiten</h3>
+          <blockquote>„Ich muss dieses Projekt endlich fertigbekommen.“</blockquote>
+          <p>
+            Ob Programmieren, Schreiben, Planen oder eine wichtige Deadline: Nimm dir bewusst Zeit und bleib bei deiner 
+            Aufgabe. Schluss mit ständigem Aufschieben. Du, deine Arbeit und eine Sitzung, die du abschließen willst.
+          </p>
+        </article>
+        <article class="use">
+          <h3 class="label">Gemeinsam dranbleiben</h3>
+          <blockquote>„Ich arbeite besser, wenn jemand anderes auch gerade arbeitet.“</blockquote>
+          <p>
+            Lade einen Freund zu einer gemeinsamen Fokussitzung ein. Sieh, wann er bereit ist, startet zusammen und
+            motiviert euch gegenseitig. Manchmal macht es einen großen Unterschied, zu wissen, dass jemand mit dir 
+            an einer Aufgabe arbeitet.
+          </p>
+        </article>
+        <article class="use">
+          <h3 class="label">Gemeinsam in der Gruppe</h3>
+          <blockquote>„Lasst uns alle zusammen etwas schaffen.“</blockquote>
+          <p>
+            Hol deine Freunde oder andere Personen mit einem Gruppencode in einen gemeinsamen Fokusraum. Erstelle 
+            eine Gruppe, teile den Code und lass alle beitreten. Ihr müsst nicht erst miteinander befreundet sein – 
+            kommt einfach zusammen und legt los.
+          </p>
+        </article>
+        <article class="use">
+          <h3 class="label">Mehr Disziplin im Alltag</h3>
+          <blockquote>„Ich möchte endlich aufhören, alles auf morgen zu verschieben.“</blockquote>
+          <p>Mach es zur Gewohnheit, anzufangen und dranzubleiben. Schließe Sitzungen ab, baue deine Streak auf und 
+            verdiene dabei Focus Points. Kleine Schritte führen mit der Zeit zu echten Fortschritten.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Solo / 1:1 / Group ── -->
+  <section id="together">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Allein oder gemeinsam</span>
+        <h2>Ein Ziel. Drei Wege, konzentriert zu bleiben.</h2>
+        <p>Ob du lieber allein arbeitest oder gemeinsam mit anderen: FocusLink lässt dir die Wahl. Starte eine Sitzung 
+          für dich, verabrede dich mit einem Freund oder bring eine ganze Gruppe zusammen.
+        </p>
+      </div>
+      <div class="modes" role="region" tabindex="0" aria-label="Fokus-Modi">
+        <div class="mode">
+          <div class="phone">
+            <img src="/images/solo-session.webp" width="640" height="1391" loading="lazy" decoding="async"
+              alt="Eine laufende Solo-Sitzung mit noch 09:53 Minuten in einem dunklen Wald mit leuchtenden Glühwürmchen und Fliegenpilzen. Eine Karte zeigt „Focus Mode Active“ und „Solo Session“ und weist darauf hin, dass das Verlassen des Bildschirms die Sitzung scheitern lässt">
+          </div>
+          <span class="tag">Solo</span>
+          <h3>Deine Zeit. Dein Fokus.</h3>
+          <p>
+            Wähle 15, 30 oder 60 Minuten oder stelle deine eigene Dauer von bis zu fünf Stunden ein. Fang an, bleib 
+            konzentriert und zieh es durch.
+          </p>
+        </div>
+        <div class="mode">
+            <div class="phone">
+              <img src="/images/with-buddy-session.webp" width="640" height="1391" loading="lazy" decoding="async"
+                alt="Eine gemeinsame 1:1-Sitzung mit Buddy Aiko: ein blauer Timer-Ring um 14:47 vor einem Tiefsee-Hintergrund, mit dem Hinweis, dass die Sitzung für beide scheitert, wenn einer geht">
+              </div>
+            <span class="tag">1:1 mit einem Buddy</span>
+            <h3>Gemeinsam anfangen. Gemeinsam durchziehen.</h3>
+            <p>Lade einen Freund ein, der gerade bereit ist, und startet eine gemeinsame Sitzung. Motiviert euch 
+              gegenseitig und bleibt bei euren Aufgaben. Bricht einer von euch die Sitzung vorzeitig ab, gilt sie 
+              für beide als nicht bestanden.
+            </p>
+        </div>
+        <div class="mode">
+          <div class="phone">
+            <img src="/images/create-group-session.webp" width="640" height="1387"
+              loading="lazy" decoding="async" alt="Eine Gruppen-Lobby mit dem Code LK-J396, die auf eine weitere Person wartet: 60 Minuten, du bist Gastgeber, späterer Einstieg in den ersten 20 Minuten möglich, mit einem Button zum Kopieren des Codes">
+          </div>
+          <span class="tag">Gruppe</span>
+          <h3>Bringt alle an einen Tisch.</h3>
+          <p>
+            Erstelle einen Gruppenraum und teile den Code, damit andere beitreten können. Ihr müsst dafür nicht 
+            miteinander befreundet sein. Ihr arbeitet gemeinsam, aber jeder ist selbst dafür verantwortlich, seine 
+            Sitzung abzuschließen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── The rule ── -->
+  <section id="how" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">So funktioniert FocusLink</span>
+        <h2>Starten. Dranbleiben. Abschließen.</h2>
+        <p>Bei FocusLink zählt nur, was du wirklich abschließt. Starte eine Sitzung, bleib dabei und halte dein
+          Versprechen an dich selbst.
+        </p>
+      </div>
+      <div class="rules">
+        <div class="rule">
+          <div class="mark ok" aria-hidden="true">✓</div><h3>Bildschirm sperren</h3>
+          <p>Leg dein Handy ruhig weg. Deine Sitzung läuft auch auf dem Sperrbildschirm weiter.</p>
+        </div>
+        <div class="rule">
+          <div class="mark no" aria-hidden="true">✕</div><h3>Die Sitzung verlassen</h3>
+          <p>Verlässt du FocusLink während einer laufenden Sitzung, startet ein kurzer Countdown. Kommst du nicht 
+            rechtzeitig zurück, gilt deine Sitzung als nicht bestanden.
+          </p>
+        </div>
+        <div class="rule">
+          <div class="mark ok" aria-hidden="true">★</div><h3>Sitzung abschließen</h3>
+          <p>Schließt du mindestens 15 Minuten erfolgreich ab, wächst deine Streak und du verdienst Focus Points für 
+            den Tresor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Buddies ── -->
+  <section class="alt">
+    <div class="wrap split">
+      <div>
+        <span class="tag">Freunde</span>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Dein Freundeskreis bleibt persönlich.</h2>
+          <p>Deine Buddies sind die Personen, mit denen du direkt gemeinsame 1:1-Fokussitzungen starten und deinen 
+            Fortschritt vergleichen kannst. Gruppensitzungen funktionieren anders: Hier kann jeder mit dem passenden 
+            Gruppencode mitmachen.
+          </p>
+        </div>
+        <ul class="list">
+            <li>Sieh, wer gerade bereit, im Fokus oder offline ist</li>
+            <li>Sende einem Freund einen Ping, wenn du gemeinsam fokussieren möchtest</li>
+            <li>Lade einen bereiten Freund zu einer gemeinsamen 1:1-Sitzung ein</li>
+            <li>Vergleicht euren Fortschritt in wöchentlichen und monatlichen Ranglisten</li>
+        </ul>
+        <!-- Move this <p> to FAQ -->
+        <!-- <p class="section-head">
+          Dein FocusLink-Konto kann auf mehreren Geräten angemeldet sein, aber es ist immer nur eine aktive Session gleichzeitig möglich.
+        </p> -->
+      </div>
+      <div class="shots">
+        <div class="phone">
+          <img src="/images/buddies-screen.webp" width="640" height="1387" loading="lazy" decoding="async"
+            alt="Der Tab „Focus Buddies“ sortiert Freunde nach Status: Timotheus ist bereit, starboy ist im Fokus, Ronnie und Sol sind offline, jeweils mit einem Ping-Button">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Vault ── -->
+  <section id="vault">
+    <div class="wrap split flip">
+      <div>
+        <span class="tag">Belohnungen</span>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Deine Belohnungen verdienst du dir durch deine Arbeit.</h2>
+          <p>
+            Focus Points erhältst du nur, wenn du Sitzungen erfolgreich abschließt. Gib sie im Tresor aus und gestalte 
+            FocusLink nach deinem Geschmack.
+          </p>
+        </div>
+        <ul class="list">
+            <li>Schalte neue Designs und Timer-Ringe mit deinen Focus Points frei.</li>
+            <li>Hol dir Streak Freeze oder Streak Restore, wenn eine Sitzung einmal nicht wie geplant läuft.</li>
+            <li>Entdecke 21 Erfolge, die du freischalten und dauerhaft behalten kannst.</li>
+        </ul>
+        <div class="swatches" role="list" aria-label="Designs">
+            <span class="sw" role="listitem"><i aria-hidden="true" style="background:#C3F400"></i>Lime</span>
+            <span class="sw" role="listitem"><i aria-hidden="true" style="background:#FF5B2E"></i>Inferno</span>
+            <span class="sw" role="listitem"><i aria-hidden="true" style="background:#E8A838"></i>Prehistoric</span>
+            <span class="sw" role="listitem"><i aria-hidden="true" style="background:#62FF00"></i>Nova</span>
+            <span class="sw" role="listitem"><i aria-hidden="true" style="background:#FF2200"></i>Machine</span>
+            <span class="sw" role="listitem"><i aria-hidden="true" style="background:#89C4E1"></i>Frostfall</span>
+            <span class="sw" role="listitem"><i aria-hidden="true" style="background:#FFD23A"></i>Helios</span>
+            <span class="sw" role="listitem"><i aria-hidden="true" style="background:#22D7FF"></i>Ion</span>
+            <span class="sw" role="listitem"><i aria-hidden="true" style="background:#FF4FD8"></i>Magenta</span>
+            <span class="sw" role="listitem"><i aria-hidden="true" style="background:#8FAE5B"></i>Olive</span>
+            <span class="sw" role="listitem">+ mehr</span>
+        </div>
+      </div>
+      <div class="shots">
+        <div class="phone sm">
+          <img src="/images/vault-achievements.webp" width="640" height="1391" loading="lazy" decoding="async"
+            alt="Der Tab „Achievements“ im Tresor: Rang Novice mit 8 von 21 Erfolgen sowie Abzeichen für 25 und 50 Fokusstunden, die bereits verdient sind, und Fortschritt in Richtung 100 und 250 Stunden">
+        </div>
+        <div class="phone sm">
+          <img src="/images/vault-recovery-items.webp" width="640" height="1391" loading="lazy" decoding="async"
+            alt="Der Tab „Recovery“ im Tresor im pinken Magenta-Design: Streak Restore für 599 Punkte und ein aktiver Streak Freeze für 250 Punkte">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── iPad ── -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">iPhone &amp; iPad</span>
+        <h2>Ein Ort für deinen Fokus. Auf all deinen Geräten.</h2>
+        <p>
+          FocusLink wurde für iPhone und iPad entwickelt. Deine Sitzungen, dein Verlauf, deine Aktivitätsübersicht 
+          und deine freigeschalteten Belohnungen bleiben auf deinen Geräten synchron.
+        </p>
+      </div>
+      <div class="ipad-grid">
+        <div>
+          <div class="tablet">
+            <img src="/images/ipad-landscape-homescreen.webp" width="1800" height="1350"
+              loading="lazy" decoding="async" alt="Der FocusLink-Startbildschirm auf dem iPad im Querformat in einem grünen Design: eine Streak von 56, Buttons für die Dauer, der Start-Session-Button und Fokus-Statistiken">
+          </div>
+        </div>
+        <div>
+          <div class="tablet">
+            <img src="/images/ipad-historyscreen.webp" width="1400" height="1867"
+              loading="lazy" decoding="async" alt="Der Sitzungsverlauf auf dem iPad: aktuelle und längste Streak von 56, 65 % Erfolgsquote, 68 abgeschlossene und 36 gescheiterte Sitzungen, 59 Stunden insgesamt und eine Kalender-Heatmap für Oktober 2026">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Privacy ── -->
+  <section id="privacy" aria-labelledby="privacy-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Datenschutz von Anfang an</span>
+        <h2 id="privacy-title">Dein Fokus gehört dir.</h2>
+        <p>FocusLink muss nicht alles über dich wissen, um dir beim konzentrierten Arbeiten zu helfen. Deine Daten 
+          bleiben standardmäßig auf deinem Gerät. Aktiviere Cloud Sync, wenn du deinen Fortschritt sichern und auf 
+          mehreren Geräten nutzen möchtest. Für die Verbindung mit Buddies wird Cloud Sync benötigt.
+        </p>
+      </div>
+      <div class="cards">
+        <div class="card">
+            <h3>Funktioniert offline</h3>
+            <p>Du brauchst kein Konto, um loszulegen. Dein Sitzungsverlauf kann vollständig auf deinem Gerät bleiben.</p>
+        </div>
+        <div class="card">
+            <h3>Keine Werbung, kein Tracking</h3>
+            <p>Keine Werbe-IDs, keine Analyse-Tools und kein Verkauf deiner Daten.</p>
+        </div>
+        <div class="card">
+            <h3>Synchronisierung nach Wunsch</h3>
+            <p>Melde dich mit Apple oder Google an, wenn du deinen Fortschritt auf mehreren Geräten nutzen möchtest.</p>
+        </div>
+        <div class="card">
+            <h3>Du hast die Kontrolle</h3>
+            <p>Exportiere deine Daten, lösche sie oder entferne dein Konto direkt in der App.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Final CTA ── -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Starte deine Sitzung.<br>Bring deine Arbeit zu Ende.</h2>
+      <p>
+        FocusLink ist kostenlos für iPhone und iPad. Konzentriere dich, arbeite gemeinsam mit anderen, baue deine 
+        Streak auf und verdiene Belohnungen, indem du deine Sitzungen wirklich abschließt. Mit freiwilligen 
+        Unterstützungen kannst du das Aurum-Supporter-Design freischalten – deinen Fortschritt kannst du dir nicht erkaufen.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" aria-disabled="true">Demnächst im App Store</a>
+        <a class="btn btn-ghost" href="mailto:support@focuslink.app">Kontakt</a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 FocusLink · Berlin, Deutschland</span>
+      <div class="links">
+        <a href="/de/privacy">Datenschutzerklärung</a>
+        <a href="/de/terms">Nutzungsbedingungen</a>
+        <a href="mailto:support@focuslink.app">support@focuslink.app</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    (function () {
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('.lang-switch a');
+        if (a) try { localStorage.setItem('fl-lang', a.getAttribute('data-lang')); } catch (err) {}
+      });
+    })();
+  </script>
+</body>
+</html>
