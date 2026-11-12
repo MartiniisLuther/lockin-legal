@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>FocusLink — Konzentriere dich allein oder mit Freunden</title>
   <meta name="description" 
-    content="FocusLink ist eine Fokus-App für iPhone und iPad. Konzentriere dich allein oder mit Freunden, 
+    content="FocusLink ist eine Fokus-App für iPhone, iPad und Android. Konzentriere dich allein oder mit Freunden, 
       baue deine Streak auf und verdiene Belohnungen für jede abgeschlossene Sitzung. Kostenlos, ohne Werbung und Tracking."
   >
   <link rel="canonical" href="https://focuslink.app/de/">
@@ -25,7 +25,7 @@
   <meta property="og:site_name" content="FocusLink">
   <meta property="og:url" content="https://focuslink.app/de/">
   <meta property="og:title" content="FocusLink — Konzentriere dich allein oder mit Freunden">
-  <meta property="og:description" content="Konzentriere dich allein oder mit Freunden. Schließe deine Sitzungen ab, baue deine Streak auf und verdiene Belohnungen. Kostenlos für iPhone und iPad, ohne Werbung und Tracking.">
+  <meta property="og:description" content="Konzentriere dich allein oder mit Freunden. Schließe deine Sitzungen ab, baue deine Streak auf und verdiene Belohnungen. Kostenlos für iPhone, iPad und Android, ohne Werbung und Tracking.">
   <meta property="og:locale" content="de_DE">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:image" content="https://focuslink.app/images/og-de.jpg?v=2">
@@ -34,7 +34,7 @@
   <meta property="og:image:alt" content="FocusLink – Konzentriere dich allein oder mit Freunden. Daneben ist der Startbildschirm der App auf einem iPhone zu sehen.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FocusLink — Konzentriere dich allein oder mit Freunden">
-  <meta name="twitter:description" content="Konzentriere dich allein oder mit Freunden. Schließe deine Sitzungen ab, baue deine Streak auf und verdiene Belohnungen. Kostenlos für iPhone und iPad, ohne Werbung und Tracking.">
+  <meta name="twitter:description" content="Konzentriere dich allein oder mit Freunden. Schließe deine Sitzungen ab, baue deine Streak auf und verdiene Belohnungen. Kostenlos für iPhone, iPad und Android, ohne Werbung und Tracking.">
   <meta name="twitter:image" content="https://focuslink.app/images/og-de.jpg?v=2">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,13 +74,13 @@
       {
         "@type": "MobileApplication",
         "name": "FocusLink",
-        "operatingSystem": "iOS, iPadOS",
+        "operatingSystem": "iOS, iPadOS, Android",
         "applicationCategory": "ProductivityApplication",
         "inLanguage": [
           "en",
           "de"
         ],
-        "description": "FocusLink ist eine Fokus-App für iPhone und iPad. Konzentriere dich allein oder mit Freunden, baue deine Streak auf und verdiene Belohnungen für jede abgeschlossene Sitzung. Kostenlos, ohne Werbung und Tracking.",
+        "description": "FocusLink ist eine Fokus-App für iPhone, iPad und Android. Konzentriere dich allein oder mit Freunden, baue deine Streak auf und verdiene Belohnungen für jede abgeschlossene Sitzung. Kostenlos, ohne Werbung und Tracking.",
         "url": "https://focuslink.app/de/",
         "image": "https://focuslink.app/images/og-de.jpg?v=2",
         "screenshot": [
@@ -282,7 +282,36 @@
       *, *::before, *::after { transition: none !important; animation: none !important; }
       .use:hover { transform: none; }
     }
+    /* Store buttons: same weight for both stores, icon + two-line label */
+    .btn-store { background: var(--surface, #1A1F14); border: 1px solid var(--border); color: var(--text); padding: 10px 18px 10px 14px; border-radius: 14px; gap: 12px; }
+    .btn-store:hover { text-decoration: none; border-color: var(--primary-dim); }
+    .btn-store svg { width: 26px; height: 26px; color: var(--primary); flex: none; }
+    .btn-store .store-txt { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
+    .btn-store .store-txt small { font-family: Inter, sans-serif; font-weight: 500; font-size: 0.72rem; color: var(--text-2); letter-spacing: 0.01em; }
+    .btn-store .store-txt b { font-weight: 700; font-size: 1.1rem; }
+    /* ── Video tour ── */
+    .tour { padding-top: 24px; }
+    .tour .section-head { margin-left: auto; margin-right: auto; text-align: center; }
+    .video-frame { position: relative; max-width: 1080px; margin: 0 auto; border-radius: 22px; overflow: hidden;
+      border: 1px solid var(--border); background: #0A0C08; box-shadow: 0 40px 100px rgba(0,0,0,.5); aspect-ratio: 16 / 9; }
+    .video-frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .tour-actions { display: flex; justify-content: center; margin-top: 22px; }
+    button.btn { background: transparent; cursor: pointer; line-height: inherit; }
+    .tour-actions .btn small { font-family: Inter, sans-serif; font-weight: 500; font-size: 0.8rem; color: var(--text-2); margin-left: 4px; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "FocusLink – Funktionstour",
+    "description": "Eine einminütige Tour durch FocusLink: Solo-Sitzungen, die 10-Sekunden-Regel, Buddies und Spitznamen, 1:1-Sitzungen, Gruppensitzungen mit Code, Gruppenregeln, Belohnungen und der Vault.",
+    "thumbnailUrl": "https://focuslink.app/videos/focuslink-features.jpg",
+    "uploadDate": "2026-11-12",
+    "duration": "PT1M3S",
+    "contentUrl": "https://focuslink.app/videos/focuslink-features.mp4",
+    "inLanguage": "en"
+  }
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Zum Inhalt springen</a>
@@ -319,22 +348,18 @@
         </p>
         <div class="cta-row">
           <!-- When live: add href="https://apps.apple.com/app/idXXXXXXXXXX" and remove aria-disabled -->
-          <a class="btn btn-primary" aria-disabled="true">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-              <path 
-                d="M16.37 12.6c.03 2.86 2.5 3.81 2.53 3.82-.02.07-.39 
-                  1.36-1.3 2.7-.79 1.15-1.6 2.3-2.88 2.32-1.26.02-1.67-.75-3.11-.75-1.45 
-                  0-1.9.73-3.09.77-1.24.05-2.18-1.25-2.98-2.4-1.62-2.35-2.86-6.63-1.2-9.53.83-1.44 
-                  2.3-2.35 3.9-2.37 1.22-.02 2.37.82 3.11.82.74 0 2.14-1.02 3.6-.87.62.03 2.34.25 
-                  3.45 1.88-.09.06-2.06 1.2-2.03 3.6M14.03 3.7c.66-.8 1.1-1.9.98-3-.95.04-2.1.63-2.78 
-                  1.43-.61.7-1.15 1.83-1 2.91 1.06.08 2.14-.54 2.8-1.34"
-              />
-            </svg>
-            Demnächst im App Store
+          <a class="btn btn-store" aria-disabled="true" aria-label="Demnächst im App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16.37 12.6c.03 2.86 2.5 3.81 2.53 3.82-.02.07-.39 1.36-1.3 2.7-.79 1.15-1.6 2.3-2.88 2.32-1.26.02-1.67-.75-3.11-.75-1.45 0-1.9.73-3.09.77-1.24.05-2.18-1.25-2.98-2.4-1.62-2.35-2.86-6.63-1.2-9.53.83-1.44 2.3-2.35 3.9-2.37 1.22-.02 2.37.82 3.11.82.74 0 2.14-1.02 3.6-.87.62.03 2.34.25 3.45 1.88-.09.06-2.06 1.2-2.03 3.6M14.03 3.7c.66-.8 1.1-1.9.98-3-.95.04-2.1.63-2.78 1.43-.61.7-1.15 1.83-1 2.91 1.06.08 2.14-.54 2.8-1.34"/></svg>
+            <span class="store-txt"><small>Demnächst im</small><b>App Store</b></span>
+          </a>
+          <!-- Wenn live: href="https://play.google.com/store/apps/details?id=com.martinlutaaya.lockin" ergänzen und aria-disabled entfernen -->
+          <a class="btn btn-store" aria-disabled="true" aria-label="Demnächst bei Google Play">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.6 2.3c-.35.2-.6.6-.6 1.1v17.2c0 .5.25.9.6 1.1l9.7-9.7L4.6 2.3Zm11.1 8.3 2.8-2.8L7.3 1.4l8.4 9.2Zm0 2.8-8.4 9.2 11.2-6.4-2.8-2.8Zm4.9-3.9-2.4-1.4-3 3 3 3 2.4-1.4c.9-.5.9-1.7 0-2.2Z"/></svg>
+            <span class="store-txt"><small>Demnächst bei</small><b>Google Play</b></span>
           </a>
           <a class="btn btn-ghost" href="#how">So funktioniert’s</a>
         </div>
-        <p class="soon">iPhone &amp; iPad · Kostenlos · Keine Werbung, kein Tracking</p>
+        <p class="soon">iPhone, iPad &amp; Android · Kostenlos · Keine Werbung, kein Tracking</p>
       </div>
       <div class="hero-shot">
         <div class="phone">
@@ -345,6 +370,29 @@
       </div>
     </div>
   </header>
+
+  <!-- ── Video tour ── -->
+  <section class="tour" id="tour-section" aria-labelledby="tour-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">So sieht’s aus</span>
+        <h2 id="tour-title">FocusLink in 25 Sekunden.</h2>
+        <p>Solo-Sitzungen, die 10-Sekunden-Regel, Gruppensitzungen und der Vault – auf einen Blick.</p>
+      </div>
+      <div class="video-frame">
+        <video id="tour" autoplay muted loop playsinline preload="metadata" poster="/videos/focuslink-short.jpg"
+          aria-label="FocusLink in 25 Sekunden: eine Solo-Sitzung, der 10-Sekunden-Countdown zum Zurückkommen, eine Gruppe mit sieben iPhones, eine abgeschlossene Sitzung und der Vault.">
+          <source src="/videos/focuslink-short.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="tour-actions">
+        <button type="button" class="btn btn-ghost" id="tour-full" data-back="Zurück zur Kurzversion">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z"/></svg>
+          <span>Ganze Tour ansehen</span><small>1 Min. · mit Ton</small>
+        </button>
+      </div>
+    </div>
+  </section>
 
   <!-- ── Use cases: why FocusLink ── -->
   <section id="for-you" style="padding-top:56px">
@@ -627,12 +675,19 @@
     <div class="wrap">
       <h2>Starte deine Sitzung.<br>Bring deine Arbeit zu Ende.</h2>
       <p>
-        FocusLink ist kostenlos für iPhone und iPad. Konzentriere dich, arbeite gemeinsam mit anderen, baue deine 
+        FocusLink ist kostenlos für iPhone, iPad und Android. Konzentriere dich, arbeite gemeinsam mit anderen, baue deine 
         Streak auf und verdiene Belohnungen, indem du deine Sitzungen wirklich abschließt. Mit freiwilligen 
         Unterstützungen kannst du das Aurum-Supporter-Design freischalten – deinen Fortschritt kannst du dir nicht erkaufen.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" aria-disabled="true">Demnächst im App Store</a>
+        <a class="btn btn-store" aria-disabled="true" aria-label="Demnächst im App Store">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16.37 12.6c.03 2.86 2.5 3.81 2.53 3.82-.02.07-.39 1.36-1.3 2.7-.79 1.15-1.6 2.3-2.88 2.32-1.26.02-1.67-.75-3.11-.75-1.45 0-1.9.73-3.09.77-1.24.05-2.18-1.25-2.98-2.4-1.62-2.35-2.86-6.63-1.2-9.53.83-1.44 2.3-2.35 3.9-2.37 1.22-.02 2.37.82 3.11.82.74 0 2.14-1.02 3.6-.87.62.03 2.34.25 3.45 1.88-.09.06-2.06 1.2-2.03 3.6M14.03 3.7c.66-.8 1.1-1.9.98-3-.95.04-2.1.63-2.78 1.43-.61.7-1.15 1.83-1 2.91 1.06.08 2.14-.54 2.8-1.34"/></svg>
+          <span class="store-txt"><small>Demnächst im</small><b>App Store</b></span>
+        </a>
+        <a class="btn btn-store" aria-disabled="true" aria-label="Demnächst bei Google Play">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.6 2.3c-.35.2-.6.6-.6 1.1v17.2c0 .5.25.9.6 1.1l9.7-9.7L4.6 2.3Zm11.1 8.3 2.8-2.8L7.3 1.4l8.4 9.2Zm0 2.8-8.4 9.2 11.2-6.4-2.8-2.8Zm4.9-3.9-2.4-1.4-3 3 3 3 2.4-1.4c.9-.5.9-1.7 0-2.2Z"/></svg>
+          <span class="store-txt"><small>Demnächst bei</small><b>Google Play</b></span>
+        </a>
         <a class="btn btn-ghost" href="mailto:support@focuslink.app">Kontakt</a>
       </div>
     </div>
@@ -656,6 +711,29 @@
       document.addEventListener('click', function (e) {
         var a = e.target.closest && e.target.closest('.lang-switch a');
         if (a) try { localStorage.setItem('fl-lang', a.getAttribute('data-lang')); } catch (err) {}
+      });
+    })();
+  </script>
+  <script>
+    // Video tour: the short cut loops silently; the button swaps in the full tour with sound.
+    (function () {
+      var v = document.getElementById('tour'), b = document.getElementById('tour-full');
+      if (!v || !b) return;
+      var SHORT = '/videos/focuslink-short.mp4', FULL = '/videos/focuslink-features.mp4', full = false;
+      var label = b.querySelector('span'), sub = b.querySelector('small');
+      var texts = { full: label.textContent, sub: sub.textContent, back: b.getAttribute('data-back') };
+      // No autoplay for people who asked for less motion
+      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        v.removeAttribute('autoplay'); v.pause(); v.controls = true;
+      }
+      b.addEventListener('click', function () {
+        full = !full;
+        v.src = full ? FULL : SHORT;
+        v.poster = full ? '/videos/focuslink-features.jpg' : '/videos/focuslink-short.jpg';
+        v.loop = !full; v.muted = !full; v.controls = full;
+        label.textContent = full ? texts.back : texts.full;
+        sub.textContent = full ? '' : texts.sub;
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
       });
     })();
   </script>

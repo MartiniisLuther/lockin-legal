@@ -1,0 +1,8 @@
+# Local working files — not part of the site
+brag-output/
+
+# Wrangler local state / caches
+.wrangler/
+
+# macOS
+.DS_Store
